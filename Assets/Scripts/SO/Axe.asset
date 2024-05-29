@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe6b00a2ec4acb4ca83276f160ba3a1, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  displayName: "\uB3C4\uB07C"
+  displayName: "[\uB3C4\uB07C]"
   description: "\uC790\uC6D0 \uCC44\uCDE8\uC5D0 \uC0AC\uC6A9"
   type: 1
   icon: {fileID: 21300000, guid: 06e8d836c76eb494db7ab3784ffcb0eb, type: 3}
