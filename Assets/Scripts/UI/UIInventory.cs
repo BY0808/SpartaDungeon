@@ -200,7 +200,7 @@ public class UIInventory : MonoBehaviour
                 {
                     case ConsumableType.Health:
                         condition.Heal(selectedItem.item.consumables[i].value); break;
-                    case ConsumableType.JumpForce:
+                    case ConsumableType.Jump:
                         if (controller != null)
                         {
                             controller.IncreaseJump(increaseJumpForce, jumpForceDuration);
