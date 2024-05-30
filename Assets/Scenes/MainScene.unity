@@ -13309,6 +13309,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 627e8e66-bab8-4016-8d6d-3c79e8145ed8
     m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1828553934}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRunInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4bf4c570-c2e6-4640-a3a0-9b36f33d75e2
+    m_ActionName: Player/Run[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -13326,7 +13342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fc0480ecbd2f346b5a5d30ace0fe46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curSpeed: 0
   moveSpeed: 5
+  runSpeed: 10
   jumpForce: 80
   groundLayerMask:
     serializedVersion: 2
@@ -13365,6 +13383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCondition: {fileID: 821507545}
+  controller: {fileID: 1828553934}
 --- !u!114 &1828553937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14857,6 +14876,7 @@ MonoBehaviour:
   inventoryWindow: {fileID: 2030217945}
   slotPanel: {fileID: 1849389370}
   dropPosition: {fileID: 0}
+  increaseJumpForce: 160
   selectedItemName: {fileID: 59062480}
   selectedItemDescription: {fileID: 1182274753}
   selectedItemStatName: {fileID: 503069987}
