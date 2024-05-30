@@ -13383,6 +13383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCondition: {fileID: 821507545}
+  controller: {fileID: 1828553934}
 --- !u!114 &1828553937
 MonoBehaviour:
   m_ObjectHideFlags: 0
