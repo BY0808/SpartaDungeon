@@ -92,6 +92,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void IncreaseJump(float amount, float duration)
+    {
+        StartCoroutine(IncreaseJumpCoroutine(amount, duration));
+    }
+
+    private IEnumerator IncreaseJumpCoroutine(float amount, float duration)
+    {
+        jumpForce += amount;
+        yield return new WaitForSeconds(duration);
+        jumpForce -= amount;
+    }
+
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;

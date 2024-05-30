@@ -13,6 +13,11 @@ public class UIInventory : MonoBehaviour
     public Transform slotPanel;
     public Transform dropPosition;
 
+    [SerializeField]
+    private float increaseJumpForce = 160f;
+    private float jumpForceDuration = 10f;
+
+
     [Header("Selected Item")]
     private ItemSlot selectedItem;
     private int selectedItemIndex;
@@ -195,6 +200,12 @@ public class UIInventory : MonoBehaviour
                 {
                     case ConsumableType.Health:
                         condition.Heal(selectedItem.item.consumables[i].value); break;
+                    case ConsumableType.JumpForce:
+                        if (controller != null)
+                        {
+                            controller.IncreaseJump(increaseJumpForce, jumpForceDuration);
+                        }
+                        break;
                 }
             }
             RemoveSelectedItem();
