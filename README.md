@@ -9,4 +9,4 @@
 6. 아이템 사용 - 나무 - 점프력 상승
 
 ### 영상 자료
-![필수구현](https://github.com/BY0808/SpartaDungeon/assets/166494058/a1a317e5-bf7d-4c81-8a9a-b6a4b5aea270)
+https://github.com/BY0808/SpartaDungeon/assets/166494058/e7071066-c8d5-495c-8f41-4bd232de587e
