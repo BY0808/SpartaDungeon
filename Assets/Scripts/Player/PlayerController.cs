@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,11 +24,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool canLook = true;
 
-    private Rigidbody rigidbody;
+    public Action inventory;
+
+    private Rigidbody playerRigidbody;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        playerRigidbody = GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -46,6 +49,22 @@ public class PlayerController : MonoBehaviour
         {
             CameraLook();
         }
+    }
+
+    public void OnInventoryButton(InputAction.CallbackContext callbackContext)
+    {
+        if (callbackContext.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            ToggleCursor();
+        }
+    }
+
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
     }
 
     public void OnLookInput(InputAction.CallbackContext context)
@@ -69,7 +88,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
-            rigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+            playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
         }
     }
 
@@ -77,9 +96,9 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
         dir *= moveSpeed;
-        dir.y = rigidbody.velocity.y;
+        dir.y = playerRigidbody.velocity.y;
 
-        rigidbody.velocity = dir;
+        playerRigidbody.velocity = dir;
     }
 
     void CameraLook()
